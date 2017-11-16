@@ -1,0 +1,34 @@
+﻿@using Telerik.Web.Mvc.UI;
+@model IEnumerable<TelerikGridMvc.BigCompany>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Telerik grid for show data of companies</h2>
+
+@* Add some css and js *@
+@(Html.Telerik().StyleSheetRegistrar().DefaultGroup(group =>
+group.Add("telerik.common.css").Add("telerik.windows7.css").Combined(true).Compress(true)))
+
+@* Show data in telerik grid *@
+@{
+    Html.Telerik().Grid(Model)
+        .Name("TopCompaniesGrid")
+        .Columns(col =>
+        {
+            col.Bound(o => o.Id).Width(120).Groupable(false);
+            col.Bound(o => o.Rank).Width(120).Groupable(false);
+            col.Bound(o => o.CompanyName).Groupable(false);
+            col.Bound(o => o.Industry).Groupable(true); //only this is as Groupable
+            col.Bound(o => o.Revenue).Groupable(false);
+
+        })
+        .Pageable(a => a.PageSize(10)) // for enable paging
+        .Groupable() // for enable grouping
+        .Sortable()
+        .Filterable()
+        .Render();
+}
+
+@(Html.Telerik().ScriptRegistrar())

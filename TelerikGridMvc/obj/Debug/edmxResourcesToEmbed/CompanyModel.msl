@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CompaniesDbModelStoreContainer" CdmEntityContainer="CompaniesDbEntities">
+    <EntitySetMapping Name="BigCompanies">
+      <EntityTypeMapping TypeName="CompaniesDbModel.BigCompany">
+        <MappingFragment StoreEntitySet="BigCompanies">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Revenue" ColumnName="Revenue" />
+          <ScalarProperty Name="Industry" ColumnName="Industry" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
